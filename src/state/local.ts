@@ -21,7 +21,7 @@ interface LocalState {
   tokenListInitted: boolean;
   setTokenListInitted: (tokenListInitted: boolean) => void;
   customTokenList: TokenMeta[];
-  addCustomToken: (token: TokenMeta) => void;
+  addCustomToken: (token: TokenMeta) => boolean;
   recentAddress: string[];
   addRecentAddress: (address: string) => void;
   alreadySubmitDeviceID: boolean;
@@ -54,19 +54,24 @@ export const useLocalStore = create<LocalState>()(
       setTokenListInitted: (tokenListInitted: boolean) => set({ tokenListInitted }),
       customTokenList: [],
       addCustomToken: (token: TokenMeta) => {
-        const current = [...get().customTokenList]
-        const index = current.findIndex((i) => i.address.toLowerCase() === token.address.toLowerCase())
-        if (index !== -1) return;
+        try {
+          const current = [...get().customTokenList]
+          const index = current.findIndex((i) => i.address.toLowerCase() === token.address.toLowerCase())
+          if (index !== -1) return false;
 
-        current.push({
-          name: token.name,
-          symbol: token.symbol,
-          address: toChecksumAddress(token.address),
-          decimals: token.decimals
-        })
+          current.push({
+            name: token.name,
+            symbol: token.symbol,
+            address: toChecksumAddress(token.address),
+            decimals: token.decimals,
+          })
 
-        set({ customTokenList: current })
-        get().toggleToken(toChecksumAddress(token.address))
+          set({ customTokenList: current })
+          get().toggleToken(toChecksumAddress(token.address))
+          return true
+        } catch (e) {
+          return false;
+        }
       },
       recentAddress: ['0x6b08B3179b58FA0FC3dEd3d959E7B688c0E52Ac2'],
       addRecentAddress: (address: string) => {

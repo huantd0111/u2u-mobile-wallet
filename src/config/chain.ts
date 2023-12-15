@@ -15,6 +15,7 @@ export interface NetworkConfig {
   dappURL: string;
   ecosystemSettingURL: string;
   api_endpoint: string;
+  iconURL: string;
 }
 
 export const SUPPORTED_CHAINS: NetworkConfig[] = [
@@ -34,7 +35,8 @@ export const SUPPORTED_CHAINS: NetworkConfig[] = [
     dappURL: "https://raw.githubusercontent.com/unicornultrafoundation/explorer-assets/master/mobile_config/dapp_mainnet.json",
     ecosystemSettingURL: "https://raw.githubusercontent.com/unicornultrafoundation/explorer-assets/master/mobile_config/ecosystem_setting_mainnet.json",
     suppoted_nfts_endpoint: "https://raw.githubusercontent.com/phongnhat19/explorer-assets/master/mobile_config/supported_nfts_mainnet.json",
-    api_endpoint: "https://sa-backend.uniultra.xyz"
+    api_endpoint: "https://sa-backend.uniultra.xyz",
+    iconURL: "./asset/icon/u2u_testnet.png",
   },
   {
     chainID: "2484",
@@ -53,7 +55,7 @@ export const SUPPORTED_CHAINS: NetworkConfig[] = [
     dappURL: "https://raw.githubusercontent.com/phongnhat19/explorer-assets/master/mobile_config/dapp.json",
     ecosystemSettingURL: "https://raw.githubusercontent.com/unicornultrafoundation/explorer-assets/master/mobile_config/ecosystem_setting.json",
     suppoted_nfts_endpoint: "https://raw.githubusercontent.com/phongnhat19/explorer-assets/master/mobile_config/supported_nfts.json",
-    api_endpoint: "https://sa-backend-dev.uniultra.xyz"
-    // api_endpoint: "http://192.168.1.39:3000"
+    api_endpoint: "https://sa-backend-dev.uniultra.xyz",
+    iconURL: "./asset/icon/u2u_main.png",
   }
 ]

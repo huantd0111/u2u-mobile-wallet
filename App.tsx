@@ -26,7 +26,7 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { useNetInfo } from "@react-native-community/netinfo";
 import appsFlyer from 'react-native-appsflyer';
 import { MenuProvider } from 'react-native-popup-menu';
-import Toast from 'react-native-toast-message';
+import Toast, { BaseToast, BaseToastProps } from 'react-native-toast-message';
 import theme from './src/theme';
 import Text from './src/component/Text';
 import Icon from './src/component/Icon';
@@ -235,7 +235,41 @@ function App(): JSX.Element {
             {props.renderTrailing && props.renderTrailing()}
           </View>
         )
-      }
+      },
+      customError: (props: BaseToastProps) => (
+        <BaseToast
+          {...props}
+          contentContainerStyle={{ paddingHorizontal: 15 }}
+          text1Style={{
+            fontSize: 15,
+            fontWeight: '400'
+          }}
+          style={{borderLeftColor: 'red'}}
+          text2NumberOfLines = {2}
+          text2Style={{
+            fontSize: 13,
+            fontWeight: '400',
+            color: 'red'
+          }}
+        />
+      ),
+      customSuccess: (props: BaseToastProps) => (
+        <BaseToast
+          {...props}
+          contentContainerStyle={{ paddingHorizontal: 15 }}
+          text1Style={{
+            fontSize: 15,
+            fontWeight: '400'
+          }}
+          style={{borderLeftColor: 'green'}}
+          text2NumberOfLines = {2}
+          text2Style={{
+            fontSize: 13,
+            fontWeight: '400',
+            color: 'green'
+          }}
+        />
+      ),
     }
   }, [preferenceTheme])
 

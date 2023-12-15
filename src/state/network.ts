@@ -10,6 +10,7 @@ interface NetworkState {
   rpc: string;
   chainId: string;
   blockExplorer: string;
+  iconURL: string;
   totalStakedAmount: string;
   fetchTotalStakedAmount: () => void;
   circulatingSupply: string;
@@ -26,6 +27,7 @@ export const useNetworkStore = create<NetworkState>()(
       chainId: "2484",
       blockExplorer: "https://testnet.u2uscan.xyz",
       totalStakedAmount: "0",
+      iconURL: "./asset/icon/u2u_testnet.png",
       fetchTotalStakedAmount: () => set({ totalStakedAmount: "1" }),
       circulatingSupply: "0",
       fetchCirculatingSupply: () => set({ circulatingSupply: "1" }),
@@ -48,6 +50,7 @@ export const useNetworkStore = create<NetworkState>()(
           blockExplorer: "https://testnet.u2uscan.xyz",
           totalStakedAmount: "0",
           circulatingSupply: "0",
+          iconURL: "./asset/icon/u2u_testnet.png",
         })
       },
       switchNetwork: (config) => {
@@ -68,7 +71,8 @@ export const useNetworkStore = create<NetworkState>()(
           chainId: config.chainID,
           blockExplorer: config.explorerURL,
           totalStakedAmount: "0",
-          circulatingSupply: "0"
+          circulatingSupply: "0",
+          iconURL: config.iconURL,
         })
       }
     }),

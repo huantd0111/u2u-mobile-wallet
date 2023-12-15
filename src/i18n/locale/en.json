@@ -233,5 +233,13 @@
   "deviceAlreadyClaim": "Already claimed on another wallet.",
   "description": "Description",
   "socialMedia": "Social media",
-  "filter": "Filter"
+  "filter": "Filter",
+  "Invalid Contract Address or Network": "Invalid Contract Address or Network",
+  "Name cannot be empty":"Name cannot be empty",
+  "Symbol cannot be empty":"Symbol cannot be empty",
+  "Invalid decimals value":"Invalid decimals value",
+  "Success":"Success",
+  "Add Cusstom token success!":"Add Cusstom token success!",
+  "Error during add cusstom token:":"Error during add cusstom token:",
+  "Wrong information or token already exists in the list":"Wrong information or token already exists in the list"
 }

@@ -134,7 +134,7 @@
   "Search articles": "Tìm kiếm bài viết",
   "manageToken": "Quản lý tiền điện tử",
   "searchTokenPlaceholder": "Tìm theo tên, địa chỉ hợp đồng thông minh...",
-  "customToken": "Token khác",
+  "customToken": "Thêm Token",
   "addCustomToken": "Thêm token",
   "symbol": "Ký hiệu",
   "decimals": "Số thập phân",
@@ -233,5 +233,13 @@
   "deviceAlreadyClaim": "Thiết bị này đã nhận NFT ở ví khác",
   "description": "Mô tả",
   "socialMedia": "Mạng xã hội",
-  "filter": "Lọc"
+  "filter": "Lọc",
+  "Invalid Contract Address or Network": "Contract Address hoặc mạng không hợp lệ",
+  "Name cannot be empty":"Tên không được để trống",
+  "Symbol cannot be empty":"Ký hiệu không được để trống",
+  "Invalid decimals value":"Giá trị thập phân không hợp lệ",
+  "Success":"Thành công",
+  "Add Cusstom token success!":"Thêm Cusstom Token thành công!",
+  "Error during add cusstom token:":"Có lỗi khi thêm Cusstom Token:",
+  "Wrong information or token already exists in the list":"Thông tin sai hoặc Token đã tồn tại trong danh sách"
 }
